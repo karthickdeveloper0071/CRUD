@@ -1,16 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import axios from "axios";
+import { useState,useEffect} from "react";
 import './App.css'
 
 function App() {
- 
+  const[users,setUsers]=useState([])
+  const [filteredUser,setFilterusers]=useState([])
+  const getAllUser=async()=> {
+  await axios.get("http://localhost:8000/users").then((res)=>{
+    console.log(res.data); 
+    setUsers(res.data);
+    setFilterusers(res.data)
+  });
+  };
+  useEffect(()=>{
+    getAllUser()
+  },[]
+  )
+
+  //Search Function
+  const handleSearchChange=(e)=>{
+    const searchText =e.target.value.toLowerCase();
+    const filteredUsers =users.filter((users)=>{users.name.toLowerCase().includes(searchText)||users.city.toLowerCase().includes(searchText)})
+    setFilterusers(filteredUsers)
+  
+  }
   return (
     <>
       <div className='container'>
-        <h3>Crud application with React</h3>
+        <h3>Crud Application with React</h3>
         <div className='input-Search'>
-          <input type="search" />
+          <input type="search" placeholder="Search Text Here" onChange={ handleSearchChange}/>
           <button className='btn green'>Add Record</button>
         </div>
         
@@ -26,30 +45,20 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Karthick</td>
-              <td>25</td>
-              <td>Salem</td>
+            {filteredUser && filteredUser.map(
+            (user,index)=>{
+              return (
+              <tr key={user.id}>
+              <td>{index+1}</td>
+              <td>{user.name}</td>
+              <td>{user.age}</td>
+              <td>{user.city}</td>
               <td><button className='btn green'>Edit</button></td>
                <td><button className='btn red'>Delete</button></td>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>Karthick</td>
-              <td>25</td>
-              <td>Salem</td>
-              <td><button className='btn green'>Edit</button></td>
-               <td><button className='btn red'>Delete</button></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Karthick</td>
-              <td>25</td>
-              <td>Salem</td>
-              <td><button className='btn green'>Edit</button></td>
-               <td><button className='btn red'>Delete</button></td>
-            </tr>
+            )
+            }
+            )}
           </tbody>
           </table>
         </div>

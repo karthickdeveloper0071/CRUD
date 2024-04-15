@@ -1,12 +1,14 @@
 [
-{"id":1, "name":"Ram Kumar", "age":25 ,"city":"sivakasi"},
-{"id":1, "name":"Ram Kumar", "age":25 ,"city":"sivakasi"},
-{"id":1, "name":"Ram Kumar", "age":25 ,"city":"sivakasi"},
-{"id":1, "name":"Ram Kumar", "age":25 ,"city":"sivakasi"},
-{"id":1, "name":"Ram Kumar", "age":25 ,"city":"sivakasi"},
-{"id":1, "name":"Ram Kumar", "age":25 ,"city":"sivakasi"},
-{"id":1, "name":"Ram Kumar", "age":25 ,"city":"sivakasi"},
-{"id":1, "name":"Ram Kumar", "age":25 ,"city":"sivakasi"},
-{"id":1, "name":"Ram Kumar", "age":25 ,"city":"sivakasi"},
-{"id":1, "name":"Ram Kumar", "age":25 ,"city":"sivakasi"}
+{"id":1, "name":"Karthick", "age":22,"city":"Sivakasi"},
+{"id":2, "name":"Veera Kumar", "age":23 ,"city":"Rajapalayam"},
+{"id":3, "name":"Arun Kumar", "age":24 ,"city":"Rajapalayam"},
+{"id":4, "name":"Manirishi", "age":21 ,"city":"Rajapalayam"},
+{"id":5, "name":"Roshan", "age":22 ,"city":"Thakalay"},
+{"id":6, "name":"Brit", "age":23 ,"city":"Rajapalayam"},
+{"id":7, "name":"Saravanan", "age":22 ,"city":"Sivakasi"},
+{"id":8, "name":"Manikandan", "age":24 ,"city":"sivakasi"},
+{"id":9, "name":"Dhinesh Kumar", "age":22 ,"city":"sivakasi"},
+{"id":10, "name":"Ruban", "age":21 ,"city":"sivakasi"}
+
+
 ]
